@@ -2,8 +2,7 @@
 //Glyn Hudson openenergymonitor.org GNU GPL V3 7/7/11
 //Credit to JCW from Jeelabs.org for RFM12 
 
-#include <RF12.h>
-#include <Ports.h> //from jeelabs.org
+#include <JeeLib.h>  //from jeelabs.org
 
 #define myNodeID 10          //node ID of tx (range 0-30)
 #define network     210      //network group (can be in the range 1-250).
