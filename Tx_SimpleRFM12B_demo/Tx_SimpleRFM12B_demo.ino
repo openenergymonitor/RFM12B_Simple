@@ -6,7 +6,7 @@
 
 #define myNodeID 10          //node ID of tx (range 0-30)
 #define network     210      //network group (can be in the range 1-250).
-#define RF_freq RF12_433MHZ     //Freq of RF12B can be RF12_433MHZ, RF12_868MHZ or RF12_915MHZ. Match freq to module
+#define RF_freq RF12_868MHZ     //Freq of RF12B can be RF12_433MHZ, RF12_868MHZ or RF12_915MHZ. Match freq to module
 
 
 typedef struct { int power1, power2, power3, battery; } PayloadTX;      // create structure - a neat way of packaging data for RF comms
@@ -33,9 +33,9 @@ void loop() {
   emontx.power2=emontx.power2+2;
   emontx.power3=emontx.power3+3;
   emontx.battery=emontx.battery+4;
- 
-  int i = 0; while (!rf12_canSend() && i<10) {rf12_recvDone(); i++;}
-    rf12_sendStart(0, &emontx, sizeof emontx);
+    
+    rf12_sendNow(0, &emontx, sizeof emontx);                    
+    rf12_sendWait(2);
     
   Serial.print("power1: "); Serial.println(emontx.power1); 
   Serial.print("power2: "); Serial.println(emontx.power2); 
