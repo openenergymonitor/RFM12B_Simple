@@ -12,6 +12,7 @@
 typedef struct { int power1, power2, power3, battery; } PayloadTX;      // create structure - a neat way of packaging data for RF comms
 PayloadTX emontx;  
 
+const int LED = 6;                                             //emonTx V3
 void setup() {
   rf12_initialize(myNodeID,RF_freq,network);   //Initialize RFM12 with settings defined above  
 Serial.begin(9600);
@@ -25,6 +26,8 @@ Serial.println("RFM12B Transmitter - Simple demo");
  if (RF_freq == RF12_915MHZ) Serial.print("915Mhz"); 
  Serial.print(" Network: "); 
  Serial.println(network);
+
+pinMode(LED, OUTPUT);
 
 }
 
@@ -42,6 +45,7 @@ void loop() {
   Serial.print("power3: "); Serial.println(emontx.power3); 
   Serial.print("battery: "); Serial.println(emontx.battery); 
   Serial.println("  "); 
-         
+  
+  digitalWrite(LED, HIGH); delay(500); digitalWrite(LED, LOW);   
   delay(2000);
 }
