@@ -48,6 +48,7 @@ void loop() {
        Serial.print(emontx.power1); Serial.print("  "); 
        Serial.print(emontx.power2); Serial.print("  "); 
        Serial.print(emontx.power3); Serial.print("  "); 
+       Serial.print(emontx.power4); Serial.print("  "); 
        Serial.print(emontx.Vrms); Serial.print("  "); 
        Serial.println(emontx.temp); 
        
