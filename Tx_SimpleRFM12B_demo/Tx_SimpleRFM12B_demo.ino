@@ -1,7 +1,7 @@
 //Simple RFM12B wireless demo - transimtter - no ack
 //Glyn Hudson openenergymonitor.org GNU GPL V3 7/7/11
 //Credit to JCW from Jeelabs.org for RFM12 
-
+#define RF69_COMPAT 0  // define this to use the RF69 driver i.s.o. RF12
 #include <JeeLib.h>  //from jeelabs.org
 
 #define myNodeID 10          //node ID of tx (range 0-30)

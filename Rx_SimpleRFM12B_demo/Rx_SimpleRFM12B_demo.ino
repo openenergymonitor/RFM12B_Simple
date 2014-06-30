@@ -2,6 +2,7 @@
 //Glyn Hudson openenergymonitor.org GNU GPL V3 12/4/12
 //Credit to JCW from Jeelabs.org for RFM12 
 
+#define RF69_COMPAT 0  // define this to use the RF69 driver i.s.o. RF12
 #include <JeeLib.h>
 
 #define myNodeID 30          //node ID of Rx (range 0-30) 
