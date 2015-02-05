@@ -12,6 +12,7 @@
 17-30	- Environmental sensing nodes (temperature humidity etc.)
 31	- Special allocation in JeeLib RFM12 driver - Node31 can communicate with nodes on any network group
 ------------------------------------------------------------------------------------------------------------
+*/
 
 #define RF69_COMPAT 0                     // Set to 1 if using RFM69CW or 0 is using RFM12B
 #include <JeeLib.h>                       //https://github.com/jcw/jeelib     
